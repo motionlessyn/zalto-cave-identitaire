@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zalto Cave Identitaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--vigne:#244735;--profond:#142B22;--ivoire:#F4F0E6;--blanc:#fff;--ligne:#E2DCCD;--gris:#6B7068;--alerte:#B5562F;--ok:#2F7A4F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,Arial,sans-serif;background:var(--ivoire);color:var(--profond);font-size:15px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+.btn{display:inline-block;background:var(--vigne);color:var(--blanc);border:none;border-radius:6px;padding:12px 22px;font:600 14px Montserrat,Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:#1c3a2b}
+.btn.alt{background:transparent;color:var(--blanc);border:1px solid rgba(255,255,255,.6)}
+.btn.alt2{background:var(--blanc);color:var(--vigne);border:1px solid var(--vigne)}
+.hide{display:none!important}
+
+/* ---------- VITRINE ---------- */
+header.nav{position:sticky;top:0;z-index:10;background:var(--profond);color:var(--blanc)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--blanc)}
+.brand .z{font-size:34px}.brand .c{font-size:8px;letter-spacing:3.5px;margin-top:2px}
+header.nav nav{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:500}
+header.nav nav a{text-decoration:none;color:#C9D3CC}
+header.nav nav a:hover{color:var(--blanc)}
+header.nav nav .btn{padding:9px 16px;font-size:13px;color:var(--blanc)}
+.hero{background:var(--profond);color:var(--blanc);padding:90px 0 100px;text-align:center}
+.hero .logo .z{font-size:96px;line-height:1}
+.hero .logo .c{font-size:13px;letter-spacing:9px;margin-top:6px}
+.hero .sig{font-size:20px;font-style:italic;margin:34px 0 14px;color:#E8E2D2}
+.hero p.lead{max-width:640px;margin:0 auto 34px;color:#C9D3CC}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:80px 0}
+.kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--vigne);font-weight:700;margin-bottom:10px}
+h2.t{font-size:30px;line-height:1.25;margin-bottom:16px;max-width:720px}
+p.intro{max-width:680px;color:#3B4A42;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--blanc);border:1px solid var(--ligne);border-radius:12px;padding:26px}
+.card .n{font-size:12px;font-weight:700;color:var(--vigne);letter-spacing:2px}
+.card h3{font-size:17px;margin:8px 0 8px}
+.card p{font-size:14px;color:#3B4A42}
+.pb{background:var(--blanc)}
+.pb .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pb ul{list-style:none}
+.pb li{padding:14px 0;border-bottom:1px solid var(--ligne);display:flex;gap:14px}
+.pb li b{color:var(--vigne);min-width:26px}
+.quote{background:var(--ivoire);border-left:4px solid var(--vigne);padding:24px 26px;border-radius:0 10px 10px 0;font-size:17px;font-style:italic}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{position:relative;padding-top:48px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:36px;height:36px;border-radius:50%;background:var(--vigne);color:var(--blanc);display:grid;place-items:center;font-weight:700}
+.step h3{font-size:16px;margin-bottom:6px}.step p{font-size:14px;color:#3B4A42}
+.offres{background:var(--profond);color:var(--blanc)}
+.offres .kicker{color:#A9C2B2}.offres p.intro{color:#C9D3CC}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:#1B3529;border:1px solid #2E4A3C;border-radius:12px;padding:28px;display:flex;flex-direction:column}
+.plan.top{background:var(--ivoire);color:var(--profond);border-color:var(--ivoire)}
+.plan .nm{font-size:12px;letter-spacing:3px;font-weight:700}
+.plan .px{font-size:40px;font-weight:700;margin:10px 0 2px}.plan .px small{font-size:14px;font-weight:500}
+.plan .tag{display:inline-block;font-size:11px;font-weight:700;background:var(--vigne);color:var(--blanc);border-radius:10px;padding:2px 10px;margin-bottom:6px;align-self:flex-start}
+.plan ul{list-style:none;margin:18px 0 22px;font-size:14px;flex:1}
+.plan li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.plan.top li{border-color:var(--ligne)}
+.plan li.no{opacity:.5}
+.note{font-size:12px;color:#A9B5AD;margin-top:18px}
+.part .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.stat{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}
+.stat div{background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;padding:16px 20px}
+.stat b{display:block;font-size:24px;color:var(--vigne)}
+.stat span{font-size:12px;color:var(--gris)}
+.demo-cta{background:var(--blanc);border:1px solid var(--ligne);border-radius:14px;padding:34px;text-align:center}
+.contact .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+form{background:var(--blanc);border:1px solid var(--ligne);border-radius:12px;padding:26px;display:grid;gap:14px}
+label{font-size:12px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:400 14px Montserrat,Arial,sans-serif;padding:10px 12px;border:1px solid var(--ligne);border-radius:6px;background:#FDFCF8;color:var(--profond);width:100%}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ok-msg{background:#E3F0E7;color:var(--ok);border-radius:8px;padding:14px;font-weight:600;font-size:14px}
+footer{background:var(--profond);color:#A9B5AD;padding:34px 0;font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .brand .z{font-size:28px}
+
+/* ---------- DEMO ---------- */
+#demo{min-height:100vh;display:flex;font-size:13px}
+#demo aside{width:230px;flex-shrink:0;background:var(--profond);color:var(--blanc);padding:26px 18px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+#demo .dlogo{text-align:center;margin-bottom:30px}
+#demo .dlogo .z{font-size:44px;line-height:1}#demo .dlogo .c{font-size:9px;letter-spacing:4px;margin-top:4px}
+#demo nav button{display:block;width:100%;text-align:left;background:none;border:none;color:#C9D3CC;padding:10px 12px;border-radius:6px;margin-bottom:4px;font:500 13px Montserrat,Arial,sans-serif;cursor:pointer}
+#demo nav button.on{background:var(--vigne);color:var(--blanc)}
+#demo nav button:hover{color:var(--blanc)}
+#demo .client{margin-top:auto;border-top:1px solid #2E4A3C;padding-top:14px;font-size:11px;color:#C9D3CC;line-height:1.6}
+#demo .client b{color:var(--blanc);font-size:12px}
+#demo .back{margin-top:14px;font-size:12px;color:#A9C2B2;background:none;border:1px solid #2E4A3C;border-radius:6px;padding:8px;cursor:pointer;font-family:inherit}
+#demo main{flex:1;padding:28px 34px;min-width:0}
+.banner{background:#FDF3E1;border:1px solid #F0DDB6;color:#7A5A1E;border-radius:8px;padding:8px 14px;font-size:12px;margin-bottom:18px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:14px;flex-wrap:wrap}
+.top h1{font-size:22px;line-height:1.25}.top .sub{color:var(--gris);margin-top:4px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.dc{background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;padding:16px 18px;min-width:0}
+.kpi .l{color:var(--gris);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+.kpi .v{font-size:26px;font-weight:700;margin:6px 0 2px}
+.kpi .s{font-size:11px;color:var(--gris)}
+.bar{height:6px;background:var(--ivoire);border-radius:3px;margin-top:8px}.bar i{display:block;height:100%;background:var(--vigne);border-radius:3px}
+.g2{display:grid;grid-template-columns:1.35fr 1fr;gap:14px}
+.dc h2{font-size:14px;margin-bottom:10px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--gris);font-weight:600;padding:7px 8px;border-bottom:1px solid var(--ligne);white-space:nowrap}
+td{padding:8px;border-bottom:1px solid #EFEADF}
+.tg{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:600;white-space:nowrap}
+.t-ok{background:#E3F0E7;color:var(--ok)}.t-al{background:#F6E5DC;color:var(--alerte)}.t-n{background:var(--ivoire);color:var(--gris)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.rouge{background:#7A1F2B}.blanc{background:#E6D58A}.bulles{background:#D9C9A3}.rose{background:#E7A3A8}
+.mini{font-size:11px;color:var(--gris);margin-top:10px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--ligne);border-radius:6px;overflow:hidden}
+.qty button{background:var(--ivoire);border:none;width:26px;height:28px;font-size:15px;cursor:pointer;color:var(--profond)}
+.qty span{width:34px;text-align:center;font-weight:600}
+.line{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #EFEADF}
+.carte{background:var(--blanc);border:1px solid var(--ligne);border-radius:10px;padding:24px 36px;font-size:13px}
+.carte .t{text-align:center;font-size:34px;color:var(--vigne)}
+.carte .st{text-align:center;font-size:9px;letter-spacing:3px;color:var(--gris);margin-bottom:12px}
+.carte h3{font-size:10.5px;letter-spacing:2.5px;color:var(--vigne);margin:12px 0 6px;border-bottom:1px solid var(--ligne);padding-bottom:4px}
+.w{display:flex;justify-content:space-between;padding:4px 0;gap:10px}.w small{color:var(--gris)}
+.w.out{text-decoration:line-through;opacity:.45}.w.new{color:var(--ok);font-weight:600}
+.sug{border-left:3px solid var(--vigne);padding:10px 12px;background:var(--ivoire);border-radius:0 6px 6px 0;margin-bottom:10px;line-height:1.45}
+.sug .act{margin-top:8px;display:flex;gap:8px}
+.sug button{font:600 11px Montserrat,Arial,sans-serif;border-radius:5px;padding:5px 10px;cursor:pointer;border:1px solid var(--vigne);background:var(--vigne);color:#fff}
+.sug button.no{background:transparent;color:var(--vigne)}
+.sug.done{opacity:.6}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--profond);color:#fff;padding:14px 20px;border-radius:8px;font-size:13px;transition:transform .3s;z-index:50;max-width:90vw;text-align:center}
+.toast.on{transform:translateX(-50%) translateY(0)}
+.empty{text-align:center;padding:40px 10px;color:var(--gris)}
+
+@media (max-width:900px){
+  header.nav nav a:not(.btn){display:none}
+  .cards,.plans,.steps{grid-template-columns:1fr}
+  .pb .grid,.part .grid,.contact .grid{grid-template-columns:1fr}
+  .hero{padding:60px 0 70px}.hero .logo .z{font-size:72px}
+  h2.t{font-size:24px}
+  section{padding:56px 0}
+  #demo{flex-direction:column}
+  #demo aside{width:100%;height:auto;position:sticky;top:0;z-index:5;padding:12px 16px}
+  #demo .dlogo,#demo .client{display:none}
+  #demo nav{display:flex;gap:6px;overflow-x:auto}
+  #demo nav button{white-space:nowrap;width:auto;margin:0}
+  #demo .back{margin-top:8px}
+  #demo main{padding:18px 16px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .g2{grid-template-columns:1fr!important}
+  .carte{padding:20px}
+  .row2{grid-template-columns:1fr}
+  #t-cmd th:nth-child(2),#t-cmd td:nth-child(2),#t-cmd th:nth-child(3),#t-cmd td:nth-child(3){display:none}
+  #t-cmd td{padding:8px 4px}
+}
+</style>
+</head>
+<body>
+
+<!-- =================== VITRINE =================== -->
+<div id="site">
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top"><span class="z script">Zalto</span><span class="c">CAVE IDENTITAIRE</span></a>
+  <nav><a href="#services">Services</a><a href="#fonctionnement">Fonctionnement</a><a href="#offres">Abonnements</a><a href="#contact">Contact</a><a class="btn" href="#demo">Espace client</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div class="logo"><div class="z script">Zalto</div><div class="c">CAVE IDENTITAIRE</div></div>
+  <p class="sig">« L’excellence du vin, la liberté de l’espace. »</p>
+  <p class="lead">Nous stockons vos vins, les livrons à la demande et construisons avec vous une carte des vins qui vous ressemble. Pour les restaurants parisiens qui manquent de place, de temps ou de sommelier.</p>
+  <div class="ctas"><a class="btn alt2" href="#contact">Demander un diagnostic gratuit</a><a class="btn alt" href="#demo">Voir l’espace client</a></div>
+</div></div>
+
+<section class="pb"><div class="wrap grid">
+  <div>
+    <div class="kicker">Le constat</div>
+    <h2 class="t">Une belle carte des vins demande de la place, du temps et de l’expertise.</h2>
+    <ul>
+      <li><b>01</b><span>Votre cave est pleine et chaque mètre carré compte en salle comme en réserve.</span></li>
+      <li><b>02</b><span>Concevoir et actualiser la carte prend du temps, et un sommelier coûte cher.</span></li>
+      <li><b>03</b><span>Les vins les plus recherchés sont réservés à quelques établissements.</span></li>
+    </ul>
+  </div>
+  <div class="quote">« Je suis passionné de vin, mais je n’ai ni la place ni le temps de gérer une carte de 150 références. »<br><small style="font-style:normal;font-size:12px;color:var(--gris)">Ce que nous entendons chez les restaurateurs rencontrés</small></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="kicker">Nos services</div>
+  <h2 class="t">Un seul partenaire pour tout ce qui concerne votre vin.</h2>
+  <p class="intro">Stockage, approvisionnement et carte des vins existent séparément. Nous les réunissons dans un abonnement mensuel, avec un conseiller qui connaît votre restaurant.</p>
+  <div class="cards">
+    <div class="card"><div class="n">01</div><h3>Stockage externalisé</h3><p>Vos bouteilles sont conservées en cave professionnelle à température contrôlée, assurées et inventoriées. Vous libérez de la place chez vous.</p></div>
+    <div class="card"><div class="n">02</div><h3>Approvisionnement et livraison</h3><p>Commandez en ligne avant 16 h, recevez le lendemain dans Paris. Accès à notre sélection de vignerons et aux allocations de notre réseau.</p></div>
+    <div class="card"><div class="n">03</div><h3>Carte des vins sur mesure</h3><p>Nous concevons votre carte selon votre cuisine et votre clientèle, puis la faisons évoluer selon ce qui se vend vraiment.</p></div>
+  </div>
+</div></section>
+
+<section class="pb" id="fonctionnement"><div class="wrap">
+  <div class="kicker">Fonctionnement</div>
+  <h2 class="t">Du domaine à votre salle, en quatre étapes.</h2>
+  <p class="intro">Chaque bouteille est suivie : référence, millésime, quantité et propriétaire.</p>
+  <div class="steps">
+    <div class="step"><h3>Diagnostic</h3><p>Nous faisons l’inventaire de votre cave, de votre carte et de vos besoins de stockage.</p></div>
+    <div class="step"><h3>Sélection</h3><p>Votre conseiller construit votre carte avec les vignerons de notre réseau.</p></div>
+    <div class="step"><h3>Stockage</h3><p>Vos vins rejoignent notre cave partenaire. Vous suivez votre stock en ligne.</p></div>
+    <div class="step"><h3>Livraison</h3><p>Vous commandez quand vous voulez, nous livrons dans Paris sous 24 h.</p></div>
+  </div>
+</div></section>
+
+<section class="offres" id="offres"><div class="wrap">
+  <div class="kicker">Abonnements</div>
+  <h2 class="t">Trois formules, sans investissement de départ.</h2>
+  <p class="intro">Abonnement mensuel hors taxes. Les bouteilles sont facturées en plus, selon vos commandes.</p>
+  <div class="plans">
+    <div class="plan"><div class="nm">ESSENTIEL</div><div class="px">175 € <small>HT / mois</small></div>
+      <ul><li>Stockage de 150 bouteilles</li><li>Accès au catalogue et approvisionnement</li><li>Conseil sur les vins</li><li class="no">Gestion des stocks</li><li class="no">Livraisons incluses</li><li>Carte des vins en supplément</li></ul>
+      <a class="btn alt" href="#contact">Choisir Essentiel</a></div>
+    <div class="plan top"><span class="tag">Le plus choisi</span><div class="nm">PROFESSIONNEL</div><div class="px">350 € <small>HT / mois</small></div>
+      <ul><li>Stockage de 250 bouteilles</li><li>Conseil personnalisé</li><li>Gestion des stocks en ligne</li><li>2 livraisons par mois incluses</li><li>Carte des vins en supplément</li><li>Allocations en supplément</li></ul>
+      <a class="btn" href="#contact">Choisir Professionnel</a></div>
+    <div class="plan"><div class="nm">PREMIUM</div><div class="px">550 € <small>HT / mois</small></div>
+      <ul><li>Stockage de 500 bouteilles</li><li>Conseil sur mesure</li><li>Gestion des stocks en ligne</li><li>4 livraisons par mois incluses</li><li>Création de carte et mise à jour trimestrielle</li><li>Gestion des allocations incluse</li></ul>
+      <a class="btn alt" href="#contact">Choisir Premium</a></div>
+  </div>
+  <p class="note">Verrerie en option dans toutes les formules. Livraisons et stockage supplémentaires facturés en complément.</p>
+</div></section>
+
+<section class="part"><div class="wrap grid">
+  <div>
+    <div class="kicker">Notre réseau</div>
+    <h2 class="t">Des vins de vignerons, et l’accès aux allocations.</h2>
+    <p class="intro" style="margin-bottom:0">Nous travaillons avec Vin Identitaire, dont le réseau de domaines fournit déjà des maisons haut de gamme à Paris. Vous accédez à des références difficiles à trouver, sans constituer un stock important.</p>
+  </div>
+  <div class="demo-cta">
+    <div class="kicker">Espace client</div>
+    <h2 class="t" style="font-size:22px;margin:0 auto 12px">Votre cave, vos commandes et votre carte au même endroit.</h2>
+    <p style="color:#3B4A42;margin-bottom:20px;font-size:14px">Essayez la démonstration avec un restaurant fictif.</p>
+    <a class="btn" href="#demo">Ouvrir la démo</a>
+  </div>
+</div></section>
+
+<section class="pb contact" id="contact"><div class="wrap grid">
+  <div>
+    <div class="kicker">Contact</div>
+    <h2 class="t">Parlons de votre cave.</h2>
+    <p class="intro">Nous lançons le service dans le 6e et le 16e arrondissement. Laissez-nous vos coordonnées : nous venons faire un diagnostic gratuit de votre gestion des vins.</p>
+    <div class="stat"><div><b>6e et 16e</b><span>Zones de lancement</span></div><div><b>J+1</b><span>Livraison dans Paris</span></div><div><b>0 €</b><span>Diagnostic</span></div></div>
+  </div>
+  <form id="f" onsubmit="return envoyer(event)">
+    <div class="row2"><label>Nom du restaurant<input required placeholder="Ex. Le Bistrot du coin"></label><label>Arrondissement<select><option>Paris 6e</option><option>Paris 16e</option><option>Autre</option></select></label></div>
+    <div class="row2"><label>Votre nom<input required></label><label>Fonction<input placeholder="Gérant, chef, sommelier…"></label></div>
+    <label>E-mail ou téléphone<input required></label>
+    <label>Nombre de références sur votre carte<select><option>Moins de 50</option><option>50 à 150</option><option>Plus de 150</option></select></label>
+    <label>Votre besoin<textarea rows="3" placeholder="Manque de place, création de carte, allocations…"></textarea></label>
+    <button class="btn" type="submit">Demander mon diagnostic</button>
+    <div id="okf" class="ok-msg hide">Merci ! Ceci est un prototype : le formulaire n’envoie rien pour l’instant.</div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <a class="brand" href="#top"><span class="z script">Zalto</span><span class="c">CAVE IDENTITAIRE</span></a>
+  <div>Projet étudiant réalisé dans le cadre de l’IRP, Institut Lyfe, 2026.<br>Prototype de démonstration : offre et données non contractuelles. Sans lien avec la marque de verrerie Zalto.</div>
+</div></footer>
+</div>
+
+<!-- =================== DEMO =================== -->
+<div id="demo" class="hide">
+<aside>
+  <div class="dlogo"><div class="z script">Zalto</div><div class="c">CAVE IDENTITAIRE</div></div>
+  <nav>
+    <button data-v="dash" class="on">Tableau de bord</button>
+    <button data-v="cmd">Commander une livraison</button>
+    <button data-v="carte">Ma carte des vins</button>
+  </nav>
+  <div class="client"><b>Restaurant démo</b><br>Paris 6e<br>Formule Professionnel<br>Conseiller dédié</div>
+  <button class="back" onclick="location.hash=''">← Retour au site</button>
+</aside>
+<main>
+  <div class="banner">Démonstration avec un restaurant fictif. Les données ne sont pas réelles.</div>
+
+  <!-- Tableau de bord -->
+  <div data-p="dash">
+    <div class="top"><div><h1>Bonjour, voici votre cave chez Zalto</h1><div class="sub">Situation du jour</div></div><button class="btn" onclick="go('cmd')">+ Commander une livraison</button></div>
+    <div class="kpis">
+      <div class="dc kpi"><div class="l">Bouteilles stockées</div><div class="v" id="k-stock">212</div><div class="s">sur 250 incluses</div><div class="bar"><i id="k-bar" style="width:85%"></i></div></div>
+      <div class="dc kpi"><div class="l">Références</div><div class="v">48</div><div class="s">32 rouges, 11 blancs, 5 bulles</div></div>
+      <div class="dc kpi"><div class="l">Prochaine livraison</div><div class="v" id="k-liv">Aucune</div><div class="s" id="k-livs">Commandez avant 16 h</div></div>
+      <div class="dc kpi"><div class="l">Livraisons incluses</div><div class="v" id="k-inc">2 / 2</div><div class="s">restantes ce mois-ci</div></div>
+    </div>
+    <div class="g2">
+      <div class="dc"><h2>Alertes de stock</h2><div class="tw"><table id="t-alertes"></table></div><div class="mini">Votre conseiller peut grouper le réassort avec votre prochaine livraison.</div></div>
+      <div class="dc"><h2>Meilleures ventes du mois</h2><div id="ventes"></div><div class="mini">Sorties de cave depuis le 1er du mois.</div></div>
+    </div>
+  </div>
+
+  <!-- Commande -->
+  <div data-p="cmd" class="hide">
+    <div class="top"><div><h1>Commander une livraison</h1><div class="sub">Sortez des bouteilles de votre cave Zalto ou commandez au catalogue</div></div></div>
+    <div class="g2" style="grid-template-columns:1.6fr 1fr">
+      <div class="dc"><h2>Votre cave et le catalogue</h2><div class="tw"><table id="t-cmd"></table></div>
+        <div class="mini">« Restaurant » : vos bouteilles stockées chez Zalto. « À acheter » : facturées à la commande. « Allocation » : sur demande, confirmée par votre conseiller.</div></div>
+      <div class="dc"><h2>Récapitulatif</h2>
+        <div class="line"><span>Sorties de cave</span><b id="r-sort">0 bt</b></div>
+        <div class="line"><span>Achats catalogue</span><b id="r-ach">0 bt</b></div>
+        <div class="line"><span>Total livré</span><b id="r-tot">0 bt</b></div>
+        <div class="line"><span>Montant des achats</span><b id="r-mt">0,00 € HT</b></div>
+        <div class="line"><span>Livraison</span><b id="r-liv">Incluse</b></div>
+        <h2 style="margin-top:16px">Créneau</h2>
+        <label style="font-weight:500">Jour et heure<select id="creneau"><option>Demain, 9 h - 11 h</option><option>Demain, 14 h - 16 h</option><option>Après-demain, 9 h - 11 h</option></select></label>
+        <button class="btn" style="width:100%;margin-top:14px" onclick="valider()">Valider la commande</button>
+        <div class="mini">Commande avant 16 h pour une livraison le lendemain. Remise contre signature, casse et écarts signalés à la réception.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte -->
+  <div data-p="carte" class="hide">
+    <div class="top"><div><h1>Ma carte des vins</h1><div class="sub">Préparée avec votre conseiller. Acceptez ou refusez ses suggestions.</div></div><div><button class="btn alt2" onclick="toast('Dans la version finale, la carte se télécharge en PDF prêt à imprimer.')">Télécharger en PDF</button></div></div>
+    <div class="g2" style="grid-template-columns:1.15fr 1fr">
+      <div class="carte"><div class="t script">La carte des vins</div><div class="st">RESTAURANT DÉMO</div><div id="carte"></div></div>
+      <div>
+        <div class="dc" style="margin-bottom:14px"><h2>Suggestions de votre conseiller</h2><div id="sugs"></div></div>
+        <div class="dc"><h2>Rotation sur 30 jours</h2><div class="tw"><table>
+          <tr><th>Vin</th><th>Vendues</th><th>Tendance</th></tr>
+          <tr><td>Morgon 2022</td><td>38</td><td><span class="tg t-ok">Forte</span></td></tr>
+          <tr><td>Sancerre 2023</td><td>31</td><td><span class="tg t-ok">Forte</span></td></tr>
+          <tr><td>Saint-Véran 2023</td><td>1</td><td><span class="tg t-al">Faible</span></td></tr>
+        </table></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const eur = n => n.toFixed(2).replace('.', ',') + ' €';
+const vins = [
+  {id:'morgon', nom:'Morgon', mil:'2022', c:'rouge', stock:6, seuil:12, type:'r'},
+  {id:'sancerre', nom:'Sancerre blanc', mil:'2023', c:'blanc', stock:4, seuil:12, type:'r'},
+  {id:'cdr', nom:'Côtes-du-Rhône', mil:'2022', c:'rouge', stock:24, seuil:12, type:'r'},
+  {id:'bandol', nom:'Bandol rosé', mil:'2023', c:'rose', stock:18, seuil:6, type:'r'},
+  {id:'stjo', nom:'Saint-Joseph rouge', mil:'2021', c:'rouge', stock:9, seuil:12, type:'r'},
+  {id:'champ', nom:'Champagne brut nature', mil:'NM', c:'bulles', stock:3, seuil:6, type:'r'},
+  {id:'morgon-a', nom:'Morgon (réassort)', mil:'2022', c:'rouge', prix:22, type:'a'},
+  {id:'champ-a', nom:'Champagne brut nature', mil:'NM', c:'bulles', prix:34, type:'a'},
+  {id:'sancerre-a', nom:'Sancerre blanc (réassort)', mil:'2023', c:'blanc', prix:17, type:'a'},
+  {id:'pommard', nom:'Pommard 1er cru', mil:'2020', c:'rouge', type:'x'},
+];
+const ventes = [['Morgon 2022','rouge',38],['Sancerre blanc 2023','blanc',31],['Côtes-du-Rhône 2022','rouge',27],['Bandol rosé 2023','rose',14],['Champagne brut nature','bulles',11]];
+const q = {}; vins.forEach(v => q[v.id] = 0);
+let livraisons = [], inclus = 2, allocDemandee = false;
+
+function go(v){ document.querySelectorAll('#demo nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  document.querySelectorAll('[data-p]').forEach(p => p.classList.toggle('hide', p.dataset.p !== v)); window.scrollTo(0,0); }
+document.querySelectorAll('#demo nav button').forEach(b => b.onclick = () => go(b.dataset.v));
+
+function route(){ const d = location.hash === '#demo';
+  document.getElementById('site').classList.toggle('hide', d); document.getElementById('demo').classList.toggle('hide', !d);
+  if (d) { go('dash'); window.scrollTo(0,0); } }
+window.addEventListener('hashchange', () => { if (location.hash === '#demo' || document.getElementById('site').classList.contains('hide')) route(); });
+
+function stockTotal(){ return 212 - vins.filter(v=>v.type==='r').reduce((a,v)=>a+(v.out||0),0); }
+function renderDash(){
+  const al = vins.filter(v => v.type==='r' && v.stock <= v.seuil);
+  document.getElementById('t-alertes').innerHTML = '<tr><th>Vin</th><th>Mill.</th><th>Stock</th><th>Seuil</th><th></th></tr>' +
+    (al.length ? al.map(v => `<tr><td><span class="dot ${v.c}"></span>${v.nom}</td><td>${v.mil}</td><td>${v.stock}</td><td>${v.seuil}</td><td>${v.stock < v.seuil*0.6 ? '<span class="tg t-al">À réassortir</span>' : '<span class="tg t-n">À surveiller</span>'}</td></tr>`).join('')
+      : '<tr><td colspan="5" class="empty">Aucune alerte</td></tr>');
+  document.getElementById('ventes').innerHTML = ventes.map((v,i) => `<div class="line" ${i===ventes.length-1?'style="border:none"':''}><span><span class="dot ${v[1]}"></span>${v[0]}</span><b>${v[2]} bt</b></div>`).join('');
+  const s = stockTotal(); document.getElementById('k-stock').textContent = s; document.getElementById('k-bar').style.width = Math.min(100, s/250*100) + '%';
+  document.getElementById('k-inc').textContent = inclus + ' / 2';
+  if (livraisons.length) { const l = livraisons[livraisons.length-1]; document.getElementById('k-liv').textContent = l.nb + ' bt'; document.getElementById('k-livs').textContent = l.creneau; }
+}
+function renderCmd(){
+  document.getElementById('t-cmd').innerHTML = '<tr><th>Vin</th><th>Mill.</th><th>Dispo</th><th>Statut</th><th>Prix HT</th><th>Quantité</th></tr>' + vins.map(v => {
+    const st = v.type==='r' ? '<span class="tg t-ok">Restaurant</span>' : v.type==='a' ? '<span class="tg t-n">À acheter</span>' : '<span class="tg t-al">Allocation</span>';
+    const dispo = v.type==='r' ? v.stock : v.type==='a' ? 'catalogue' : '12 bt réservables';
+    const ctl = v.type==='x' ? `<button class="btn alt2" style="padding:5px 10px;font-size:11px" onclick="demAlloc()">${allocDemandee?'Demandée':'Demander'}</button>`
+      : `<span class="qty"><button onclick="chg('${v.id}',-1)">−</button><span>${q[v.id]}</span><button onclick="chg('${v.id}',1)">+</button></span>`;
+    return `<tr><td><span class="dot ${v.c}"></span>${v.nom}</td><td>${v.mil}</td><td>${dispo}</td><td>${st}</td><td>${v.prix?eur(v.prix):'—'}</td><td>${ctl}</td></tr>`; }).join('');
+  const sort = vins.filter(v=>v.type==='r').reduce((a,v)=>a+q[v.id],0), ach = vins.filter(v=>v.type==='a').reduce((a,v)=>a+q[v.id],0);
+  const mt = vins.filter(v=>v.type==='a').reduce((a,v)=>a+q[v.id]*v.prix,0);
+  document.getElementById('r-sort').textContent = sort + ' bt'; document.getElementById('r-ach').textContent = ach + ' bt';
+  document.getElementById('r-tot').textContent = (sort+ach) + ' bt'; document.getElementById('r-mt').textContent = eur(mt) + ' HT';
+  document.getElementById('r-liv').textContent = inclus > 0 ? `Incluse (${inclus} restante${inclus>1?'s':''})` : '20,00 € HT (hors forfait)';
+}
+function chg(id, d){ const v = vins.find(x=>x.id===id); let n = q[id] + d; if (n < 0) n = 0; if (v.type==='r' && n > v.stock) { n = v.stock; toast('Vous n’avez que ' + v.stock + ' bouteilles de ' + v.nom + ' en cave.'); } q[id] = n; renderCmd(); }
+function demAlloc(){ allocDemandee = true; renderCmd(); toast('Demande envoyée : votre conseiller confirme la disponibilité du Pommard 1er cru sous 24 h.'); }
+function valider(){
+  const nb = Object.values(q).reduce((a,b)=>a+b,0); if (!nb) { toast('Ajoutez au moins une bouteille.'); return; }
+  vins.forEach(v => { if (v.type==='r' && q[v.id]) { v.stock -= q[v.id]; v.out = (v.out||0) + q[v.id]; } });
+  const cr = document.getElementById('creneau').value; livraisons.push({nb, creneau: cr}); if (inclus > 0) inclus--;
+  Object.keys(q).forEach(k => q[k] = 0); renderCmd(); renderDash();
+  toast('Commande confirmée : ' + nb + ' bouteilles, livraison ' + cr.toLowerCase() + '.'); setTimeout(() => go('dash'), 1200);
+}
+
+const carte = [
+  ['BULLES', [['champ','Champagne brut nature','NM',78]]],
+  ['BLANCS', [['sancerre','Sancerre','2023',54],['chablis','Chablis 1er cru','2022',68],['stveran','Saint-Véran','2023',46]]],
+  ['ROSÉ', [['bandol','Bandol','2023',52]]],
+  ['ROUGES', [['cdr','Côtes-du-Rhône','2022',36],['morgon','Morgon','2022',44],['stjo','Saint-Joseph','2021',58]]],
+];
+const etat = { stveran: '', touraine: '', pommard: '' };
+const sugs = [
+  {k:'touraine', t:'Ajouter un blanc de Loire au verre.', d:'Le Sancerre part vite : un Touraine 2023 à 7 € le verre élargit l’offre sans toucher à la bouteille.'},
+  {k:'stveran', t:'Retirer le Saint-Véran.', d:'1 bouteille vendue en 30 jours : à remplacer au prochain changement de carte.'},
+  {k:'pommard', t:'Allocation disponible.', d:'12 bouteilles de Pommard 1er cru 2020 réservables jusqu’à la fin du mois.'},
+];
+function renderCarte(){
+  let h = '';
+  carte.forEach(([sec, l]) => {
+    let items = l.map(([id,n,m,p]) => `<div class="w ${id==='stveran' && etat.stveran==='ok' ? 'out':''}"><span>${n} <small>${m}</small></span><span>${p} €</span></div>`).join('');
+    if (sec==='BLANCS' && etat.touraine==='ok') items += '<div class="w new"><span>Touraine <small>2023, au verre</small></span><span>7 €</span></div>';
+    if (sec==='ROUGES' && etat.pommard==='ok') items += '<div class="w new"><span>Pommard 1er cru <small>2020</small></span><span>120 €</span></div>';
+    h += `<h3>${sec}</h3>${items}`; });
+  document.getElementById('carte').innerHTML = h;
+  document.getElementById('sugs').innerHTML = sugs.map(s => `<div class="sug ${etat[s.k]?'done':''}"><b>${s.t}</b> ${s.d}${etat[s.k] ? `<div class="mini" style="margin-top:6px">${etat[s.k]==='ok'?'Acceptée':'Refusée'}</div>` : `<div class="act"><button onclick="rep('${s.k}','ok')">Accepter</button><button class="no" onclick="rep('${s.k}','non')">Refuser</button></div>`}</div>`).join('');
+}
+function rep(k, v){ etat[k] = v; renderCarte(); toast(v==='ok' ? 'Suggestion acceptée : la carte est mise à jour.' : 'Suggestion refusée. Votre conseiller en est informé.'); }
+
+let tt; function toast(m){ const t = document.getElementById('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 3200); }
+function envoyer(e){ e.preventDefault(); document.getElementById('okf').classList.remove('hide'); return false; }
+
+renderDash(); renderCmd(); renderCarte(); route();
+</script>
+</body>
+</html>
